@@ -34,6 +34,37 @@ const CHORD_IMAGE_MAP = {
     "B#": "C"
 };
 
+const ROOT_COLORS = {
+    "C": "#C0392B",
+
+    "C#": "#D35400",
+    "Db": "#D35400",
+
+    "D": "#E67E22",
+
+    "D#": "#F39C12",
+    "Eb": "#F39C12",
+
+    "E": "#F1C40F",
+
+    "F": "#9ACD32",
+
+    "F#": "#27AE60",
+    "Gb": "#27AE60",
+
+    "G": "#16A085",
+
+    "G#": "#1ABC9C",
+    "Ab": "#1ABC9C",
+
+    "A": "#2980B9",
+
+    "A#": "#6C5CE7",
+    "Bb": "#6C5CE7",
+
+    "B": "#8E44AD"
+};
+
 /* ------------------ HELPERS ------------------ */
 
 function choice(arr) {
@@ -93,8 +124,10 @@ function fetchChord() {
 
     const data = generateChord();
 
-    document.getElementById("chord").innerText =
-        `${data.root}${data.quality}`;
+    const chordEl = document.getElementById("chord");
+    chordEl.innerText = `${data.root}${data.quality}`;
+    chordEl.style.color = ROOT_COLORS[data.root] || "#000";
+    
     document.getElementById("inversion").innerText =
         data.inversionLabel;
 
