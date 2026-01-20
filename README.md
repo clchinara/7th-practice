@@ -41,8 +41,7 @@ Suggested practice ideas:
 
 ## Features
 
-- Randomized 7th chords (maj7, m7, 7)
-- Root position and all inversions
-- Selectors for roots, qualities, and inversions
+- Randomized 7th chord drills
+- Configurable roots, chord qualities, and inversions via sidebar selectors
 - Adjustable interval timing
 - Optional delayed chord reveal
