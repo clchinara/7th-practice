@@ -4,7 +4,7 @@ A lightweight practice driller for 7th chords and their inversions: https://clch
 
 ## What this is for
 
-This tool is made for quick visual drilling of 7th chords in two complementary practice modes:
+This tool is made for quick *visual drilling* of 7th chords in two complementary practice modes:
 
 ### 1. Sight-reading mode (*Reveal chord later* OFF)
 - The chord symbol, inversion, and staff diagram are shown together
@@ -21,14 +21,19 @@ This tool is made for quick visual drilling of 7th chords in two complementary p
 
 ## How to practice
 
-1. Set an interval (in seconds).
-2. Let the chord prompt appear.
-3. Depending on the mode:
+1. Open the sidebar to select or exclude:
+   - root notes
+   - chord qualities
+   - inversions
+2. Set an interval (in seconds).
+3. Let the chord prompt appear.
+4. Depending on the mode:
    - read and absorb the notation (sight-reading)
    - or find and play the chord before the reveal (active recall)
-4. Use *Pause / Continue* to stop and think when needed.
+5. Use *Pause / Continue* to stop and think when needed.
 
 Suggested practice ideas:
+- Limit roots or inversions to focus on weak areas
 - Slow tempo (6–10s) for learning new chord types
 - Faster tempo (2–4s) for automatic recognition
 - Say chord tones or inversion names out loud
@@ -38,5 +43,6 @@ Suggested practice ideas:
 
 - Randomized 7th chords (maj7, m7, 7)
 - Root position and all inversions
+- Selectors for roots, qualities, and inversions
 - Adjustable interval timing
 - Optional delayed chord reveal
