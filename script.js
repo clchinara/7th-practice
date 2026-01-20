@@ -127,7 +127,7 @@ function fetchChord() {
     const chordEl = document.getElementById("chord");
     chordEl.innerText = `${data.root}${data.quality}`;
     chordEl.style.color = ROOT_COLORS[data.root] || "#000";
-    
+
     document.getElementById("inversion").innerText =
         data.inversionLabel;
 
@@ -161,10 +161,10 @@ function scheduleNext() {
     );
 }
 
-/* ------------------ UI EVENTS ------------------ */
-
-document.getElementById("pauseBtn").onclick = () => {
+function togglePause() {
     paused = !paused;
+    document.body.classList.toggle("paused", paused);
+
     document.getElementById("pauseBtn").innerText =
         paused ? "Continue" : "Pause";
 
@@ -174,7 +174,11 @@ document.getElementById("pauseBtn").onclick = () => {
     } else {
         scheduleNext();
     }
-};
+}
+
+/* ------------------ UI EVENTS ------------------ */
+
+document.getElementById("pauseBtn").onclick = togglePause;
 
 document.getElementById("setIntervalBtn").onclick = () => {
     const seconds = Number(document.getElementById("intervalInput").value);
@@ -189,6 +193,14 @@ document.getElementById("setIntervalBtn").onclick = () => {
         scheduleNext();
     }
 };
+
+document.addEventListener("click", (e) => {
+    // Ignore clicks on controls (buttons, inputs, labels)
+    const tag = e.target.tagName.toLowerCase();
+    if (["button", "input", "label"].includes(tag)) return;
+
+    togglePause();
+});
 
 /* ------------------ START ------------------ */
 
