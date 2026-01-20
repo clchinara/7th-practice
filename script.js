@@ -44,6 +44,29 @@ function normalizeRoot(root) {
     return CHORD_IMAGE_MAP[root] || root;
 }
 
+/* ------------------ IMAGE PRELOAD ------------------ */
+
+function preloadImages() {
+    const cache = [];
+
+    ROOTS.forEach(root => {
+        QUALITIES.forEach(quality => {
+            INVERSIONS.forEach(inv => {
+                const normalizedRoot = normalizeRoot(root);
+                const img = new Image();
+                img.src = `chords/${normalizedRoot}${quality}_${inv.suffix}.png`;
+                cache.push(img);
+            });
+        });
+    });
+
+    const empty = new Image();
+    empty.src = "chords/empty.png";
+    cache.push(empty);
+
+    window._imageCache = cache;
+}
+
 /* ------------------ CHORD GENERATION ------------------ */
 
 function generateChord() {
@@ -136,5 +159,6 @@ document.getElementById("setIntervalBtn").onclick = () => {
 
 /* ------------------ START ------------------ */
 
+preloadImages();
 fetchChord();
 scheduleNext();
